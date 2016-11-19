@@ -4,6 +4,10 @@
         window.document.title = "[PlayerTitle]"+message;
     };
     
+    ext.executeFn = function(message) {
+        window.document.title = "[PlayerFunction]"+message;
+    };
+    
     ext._shutdown = function() {};
 
     ext._getStatus = function() {
@@ -12,7 +16,8 @@
 
     var descriptor = {
         blocks: [
-            [' ', 'Change EXE Player message to %s', 'setTitle', 'message']
+            [' ', 'Change EXE Player message to %s', 'setTitle', 'message'],
+            [' ', 'Execute external C# function %s', 'executeFn', ' ']
         ]
     };
 

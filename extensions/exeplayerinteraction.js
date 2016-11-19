@@ -12,7 +12,7 @@
 
     var descriptor = {
         blocks: [
-            [' ', 'Change EXE Player message', 'setTitle', 'message']
+            [' ', 'Change EXE Player message to %s', 'setTitle', 'message']
         ]
     };
 

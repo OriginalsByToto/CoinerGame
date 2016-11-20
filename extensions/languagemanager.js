@@ -5,6 +5,11 @@
     
     var en = new Map();
     
+    ext.clearData = function(lang) {
+        if(land == "fr") fr.clear();
+        else en.clear();
+    };
+    
     ext.registerMessage = function(name, message, lang) {
         if(lang == 'fr') fr.set(name, message);
         else en.set(name, message);   

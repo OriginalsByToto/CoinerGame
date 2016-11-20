@@ -29,7 +29,8 @@
     var descriptor = {
         blocks: [
             [' ', 'Register %s with message %s in lang %m.lang', 'registerMessage', 'name', 'message', 'fr'],
-            ['r', 'Get message %s in %m.lang', 'getMessage', 'name', 'fr']
+            ['r', 'Get message %s in %m.lang', 'getMessage', 'name', 'fr'],
+            [' ', 'Clear data of lang %m.lang', 'clearData', 'fr']
         ],
         menus: {
             lang: ["fr", "en"]

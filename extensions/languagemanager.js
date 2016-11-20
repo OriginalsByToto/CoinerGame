@@ -1,37 +1,13 @@
 (function(ext) {
+
     
-    HashMap = function(){
-      this._dict = {};
-    }
-    HashMap.prototype._shared = {id: 1};
-    HashMap.prototype.put = function put(key, value){
-      if(typeof key == "object"){
-        if(!key.hasOwnProperty._id){
-          key.hasOwnProperty = function(key){
-            return Object.prototype.hasOwnProperty.call(this, key);
-          }
-          key.hasOwnProperty._id = this._shared.id++;
-        }
-        this._dict[key.hasOwnProperty._id] = value;
-      }else{
-        this._dict[key] = value;
-      }
-      return this; // for chaining
-    }
-    HashMap.prototype.get = function get(key){
-      if(typeof key == "object"){
-        return this._dict[key.hasOwnProperty._id];
-      }
-      return this._dict[key];
-    }
+    var fr = new Map();
     
-    var fr = new HashMap();
-    
-    var en = new HashMap();
+    var en = new Map();
     
     ext.registerMessage = function(name, message, lang) {
-        if(lang == 'fr') fr.put(name, message);
-        else en.put(name, message);
+        if(lang == 'fr') fr.set(name, message);
+        else en.set(name, message);   
     };
     
     ext.getMessage = function(name, lang) {
@@ -48,9 +24,11 @@
     var descriptor = {
         blocks: [
             [' ', 'Register %s with message %s in lang %m.lang', 'registerMessage', 'name', 'message', 'fr'],
-            ['r', 'Get message %s in %m.lang', 'getMessage', ' ', 'fr']
+            ['r', 'Get message %s in %m.lang', 'getMessage', 'name', 'fr']
         ],
-        menus: [ lang: ['en', 'fr'] ]
+        menus: {
+            lang: ["fr", "en"]
+        }
     };
 
     ScratchExtensions.register('Language Manager', descriptor, ext);

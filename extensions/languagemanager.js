@@ -6,16 +6,17 @@
     var en = new Map();
     
     ext.clearData = function(lang) {
-        if(land == "fr") fr.clear();
+        if(lang == "fr") fr.clear();
         else en.clear();
     };
     
     ext.registerMessage = function(name, message, lang) {
         if(lang == 'fr') fr.set(name, message);
-        else en.set(name, message);   
+        else en.set(name, message);
     };
     
     ext.getMessage = function(name, lang) {
+        console.log("fr : " + fr.size());
         if(lang == 'fr') return fr.get(name);
         else return en.get(name);
     };

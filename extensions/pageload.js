@@ -19,5 +19,5 @@
         ]
     };
 
-    ScratchExtensions.register('Language Manager', descriptor, ext);
+    ScratchExtensions.register('Page Loaded event', descriptor, ext);
 })({});

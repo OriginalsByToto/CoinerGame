@@ -11,17 +11,13 @@
     };
     
     ext.registerMessage = function(name, message, lang) {
-        console.log("Start registering");
         if(lang == 'fr') fr[name] = message;
         else en[name] = message;
-        console.log("End registering");
     };
     
     ext.getMessage = function(name, lang) {
-        console.log("Start getting");
         if(lang == 'fr') return fr[name];
         else return en[name];
-        console.log("End getting");
     };
     
     ext._shutdown = function() {};

@@ -1,26 +1,27 @@
 (function(ext) {
 
     
-    var fr = new Map();
+    var fr = {};
     
-    var en = new Map();
+    var en = {};
     
     ext.clearData = function(lang) {
-        if(lang == "fr") fr.clear();
-        else en.clear();
+        if(lang == "fr") fr = {};
+        else en = {};
     };
     
     ext.registerMessage = function(name, message, lang) {
         console.log("Start registering");
-        if(lang == 'fr') fr.set(name, message);
-        else en.set(name, message);
-        console.log("fr: " + fr.size());
+        if(lang == 'fr') fr[name] = message;
+        else en[name] = message;
+        console.log("End registering");
     };
     
     ext.getMessage = function(name, lang) {
-        console.log("fr : " + fr.size());
-        if(lang == 'fr') return fr.get(name);
-        else return en.get(name);
+        console.log("Start getting");
+        if(lang == 'fr') return fr[name];
+        else return en[name];
+        console.log("End getting");
     };
     
     ext._shutdown = function() {};

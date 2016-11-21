@@ -11,6 +11,7 @@
     };
     
     ext.registerMessage = function(name, message, lang) {
+        console.log("Start registering");
         if(lang == 'fr') fr.set(name, message);
         else en.set(name, message);
         console.log("fr: " + fr.size());

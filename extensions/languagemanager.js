@@ -13,6 +13,7 @@
     ext.registerMessage = function(name, message, lang) {
         if(lang == 'fr') fr.set(name, message);
         else en.set(name, message);
+        console.log("fr: " + fr.size());
     };
     
     ext.getMessage = function(name, lang) {

@@ -2,10 +2,12 @@
     
     ext.setTitle = function(message) {
         window.document.title = "[PlayerTitle]"+message;
+        parent.window.document.title = "[PlayerTitle]"+message;
     };
     
     ext.executeFn = function(message) {
         window.document.title = "[PlayerFunction]"+message;
+        parent.window.document.title = "[PlayerFunction]"+message;
     };
     
     ext._shutdown = function() {};

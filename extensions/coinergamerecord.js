@@ -11,7 +11,7 @@ new (function() {
     ext.get_hs = function(callback) {
         console.log("Getting network highscore ...");
         $.ajax({
-              url: 'http://api.originalsbytoto.com/coinergame/getrecord.php',
+              url: '//api.originalsbytoto.com/coinergame/getrecord.php',
               success: function( result ) {
                   console.log("Actual highscore is : " + result);
                   callback(result);
@@ -22,7 +22,7 @@ new (function() {
     ext.get_who = function(callback) {
         console.log("Getting network best player ...");
         $.ajax({
-              url: 'http://api.originalsbytoto.com/coinergame/getwhorecord.php',
+              url: '//api.originalsbytoto.com/coinergame/getwhorecord.php',
               success: function( result ) {
                   console.log("Actual best player is : " + result);
                   callback(result);
@@ -34,7 +34,7 @@ new (function() {
         console.log("Adding score to network ...");
         username = username.replace(" ", "%20");
         $.ajax({
-              url: 'http://api.originalsbytoto.com/coinergame/addscore.php?user='+username+"&score="+score,
+              url: '//api.originalsbytoto.com/coinergame/addscore.php?user='+username+"&score="+score,
               success: function( result ) {
                   console.log("Result state for new score is : " + result);
                   callback(result);
